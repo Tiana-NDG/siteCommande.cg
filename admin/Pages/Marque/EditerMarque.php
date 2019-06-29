@@ -4,32 +4,26 @@
 	
     $code = $_GET['id'];
 
-    $req = $bdd->prepare('SELECT * FROM Categorie WHERE CODE_CAT=?');
+    $req = $bdd->prepare('SELECT * FROM Marque_Voiture WHERE CodeMarq=?');
     $variable = array($code);
 	$req->execute($variable);
 	$donnees = $req->fetch();
-
 ?>
 	<body>
 		<div class="col-md-6 col-xs_12 spacer col-md-offest">
 			<div class="panel-info spacer ">
-				<div class="panel-heading">La catégorie à modifier</div>
+				<div class="panel-heading">La marque à modifier</div>
 				<div class="panel-body">
-					<form method="post" action="ModifierCategorie.php">
+					<form method="post" action="ModifierMarque.php">
 
 						<div class="form-group">
 							<label class="control-label">Code:</label>
-							<input type="text" name="id" value="<?php echo $donnees['CODE_CAT']; ?>" readonly class="form-control">
+							<input type="text" name="id" value="<?php echo $donnees['CodeMarq']; ?>" readonly class="form-control">
 						</div>
 
 						<div class="form-group">
 							<label class="control-label">Designation:</label>
-							<input type="text" name="design" value="<?php echo $donnees['NOM_CAT']; ?>" class="form-control">
-						</div>
-
-						<div class="form-group">
-							<label class="control-label">Description:</label>
-							<input type="text" name="descrip" value="<?php echo $donnees['DESCRIPTION_CAT']; ?>" class="form-control">
+							<input type="text" name="designation" value="<?php echo $donnees['DesignationMarq']; ?>" class="form-control">
 						</div>
 		
 						<div>

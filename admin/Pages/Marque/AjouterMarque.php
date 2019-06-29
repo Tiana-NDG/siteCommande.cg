@@ -3,18 +3,17 @@
     if(isset($_POST['submit']))
         {
 
-            $designa = $_POST['design'];
-            $descrip = $_POST['descrip'];
+            $designation = $_POST['designation'];
 
-            if(!empty($designa) && !empty($descrip) )
+            if(!empty($designation))
                 {
                     //Enregistrement des données dans la base de donnée
 
                     require_once("../database.php");
         
-                    $req = $bdd->prepare('INSERT INTO Categorie(NOM_CAT, DESCRIPTION_CAT) VALUES( ?, ?)');
+                    $req = $bdd->prepare('INSERT INTO Marque_Voiture(DesignationMarq) VALUES(?)');
 
-                    $variables = array($designa, $descrip);
+                    $variables = array($designation);
     
                     $req->execute($variables);
 

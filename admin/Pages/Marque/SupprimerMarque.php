@@ -2,9 +2,9 @@
     require_once('../database.php');
     $code = $_GET['id'];
 
-    $req = $bdd->prepare('DELETE FROM Categorie WHERE CODE_CAT=?');
+    $req = $bdd->prepare('DELETE FROM Marque_Voiture WHERE CodeMarq=?');
     $valeur = array($code);
     $req->execute($valeur);
 
-    header('location:AfficherCategorie.php');
+    header('location:AfficherMarque.php');
 ?>

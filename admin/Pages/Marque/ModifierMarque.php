@@ -5,22 +5,21 @@
             require_once("../database.php");
 
             $code = $_POST['id'];
-            $designa = $_POST['design'];
-            $descrip = $_POST['descrip'];
+            $designa = $_POST['designation'];
 
-            if( (!empty($designa)) && (!empty( $descrip)) )
+            if( (!empty($designation)))
                 {
                     //Modification des données dans la base de donnée
         
-                    $req = $bdd->prepare("UPDATE Categorie SET NOM_CAT = ?, DESCRIPTION_CAT = ? WHERE CODE_CAT=?");
+                    $req = $bdd->prepare("UPDATE Marque_Voiture SET DesignationMarq = ?  WHERE CodeMarq=?");
 
-                    //$variables = array($designa, $descrip, $code);
+                    $variables = array($designation, $code);
     
-                    $req->execute(array($designa, $descrip, $code));
+                    $req->execute($variables);
 
                    if($req)
                         {
-                            header("location:AfficherCategorie.php");
+                            header("location:AfficherMarque.php");
                         }
                     else
                         {
