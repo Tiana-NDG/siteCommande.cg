@@ -1,19 +1,21 @@
 <?php
 	require_once("../entete.php");
 //connexion à la base de données
-    require_once("../database.php");
+	require_once("../database.php");
 	
-//Affichages de toutes les lignes de la table étudiants
+//Affichages de toutes les pièces détachées
 
-		$reponse = $bdd->prepare('SELECT * FROM Produits INNER JOIN Categorie ON Produits.CODE_CAT = Categorie.CODE_CAT');
-		$reponse->execute();
-	?>
+	$reponse = $bdd->prepare('SELECT * FROM Pieces INNER JOIN Modele_Voiture ON Pieces.CodeMod = Modele_Voiture.CodeMod');
+	$reponse->execute();
+?>
 <!DOCTYPE html>
 <html>
 	<body>
 		<table border="1" width="60%">
 			<thead>
 				<tr>
+					<th><strong>Code du produit</strong></th>
+
 					<th><strong>Images</strong></th>
 
 					<th><strong>Designation</strong></th>
@@ -22,33 +24,27 @@
 							
                     <th><strong>Quantité</strong></th>
                     
-                    <th><strong>Disponobilité</strong></th>
-
-                    <th><strong>Promotion</strong></th>
-                    
-                    <th><strong>Categorie</strong></th>
+                    <th><strong>Modele</strong></th>
 				</tr>
 			</thead>
 				
 			<tbody>
 				<?php while($donnees = $reponse->fetch()) { ?>
 				<tr>
-					<td><img src="../styles/images/<?php echo ($donnees['PHOTO_PRO']);?>" width="100" heigth="100"/></td>
+					<td><?php echo htmlspecialchars($donnees['CodePro']); ?></td>
 
-					<td><?php echo htmlspecialchars($donnees['DESIGNATION_PRO']); ?></td>
+					<td><img src="../../../styles/images/<?php echo ($donnees['PhotoPro']);?>" width="100" heigth="100"/></td>
+
+					<td><?php echo htmlspecialchars($donnees['DesignationPro']); ?></td>
 						
-                    <td><?php echo htmlspecialchars($donnees['PRIX_PRO']); ?></td>
+                    <td><?php echo htmlspecialchars($donnees['PUPro']); ?></td>
                     
-                    <td><?php echo htmlspecialchars($donnees['QUANTITE_PRO']); ?></td>
+                    <td><?php echo htmlspecialchars($donnees['QtePro']); ?></td>
 
-                    <td><?php echo htmlspecialchars($donnees['DISPONIBILITE_PRO']); ?></td>
+                    <td><?php echo htmlspecialchars($donnees['DesignationMod']); ?></td>
 
-					<td><?php echo htmlspecialchars($donnees['PROMOTION_PRO']); ?></td>
-                    
-                    <td><?php echo htmlspecialchars($donnees['NOM_CAT']); ?></td>
-
-					<td><a href="EditerProduit.php?Code=<?php echo htmlspecialchars($donnees['CODE_PRO']) ?>"><strong>Editer</strong></a></td>
-					<td><a href="SupprimerProduit.php?Code=<?php echo htmlspecialchars($donnees['CODE_PRO']) ?>"><strong>Suprimer</strong></a></td> 
+					<td><a href="EditerProduit.php?Code=<?php echo htmlspecialchars($donnees['CodePro']) ?>"><strong>Editer</strong></a></td>
+					<td><a href="SupprimerProduit.php?Code=<?php echo htmlspecialchars($donnees['CodePro']) ?>"><strong>Suprimer</strong></a></td> 
 				</tr>
 				<?php
 					}

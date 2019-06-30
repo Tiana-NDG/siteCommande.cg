@@ -23,13 +23,13 @@
 
 			//Emplacement du fichier
 
-			move_uploaded_file($file_tmp_name, "./../../styles/images/$Photo");
+			move_uploaded_file($file_tmp_name, "./../../../styles/images/$Photo");
 
-			if( (!empty($code)) && (!empty($designation)) && (!empty( $prix)) && (!empty( $quantite)) && (!empty($Photo)) && (!empty($dispo)) )
+			if( (!empty($code)) && (!empty($designation)) && (!empty( $prix)) && (!empty( $quantite)) && (!empty($Photo)) && (!empty($modele)) )
 				{
 					//Enregistrement des données dans la base de donnée
 
-					$req = $bdd->prepare('INSERT INTO Pieces (CodePro, DesignationPro, QtePro, PUPro, PhotoPro, CodeMod) VALUES( ?, ?, ?, ?, ?, ?, ?)');
+					$req = $bdd->prepare('INSERT INTO Pieces (CodePro, DesignationPro, QtePro, PUPro, PhotoPro, CodeMod) VALUES( ?, ?, ?, ?, ?, ?)');
 
 					$variables = array($code, $designation, $quantite, $prix, $Photo, $modele);
 

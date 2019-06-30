@@ -1,6 +1,5 @@
 <?php 
-		require_once('../entete.php');
-		//require_once('AjouterProduit.php');
+	require_once('../entete.php');
 ?>
 <body>
 	<div class="container spacer col-md-6 col-sx-12 col-md-offest-6">
