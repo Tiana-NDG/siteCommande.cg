@@ -1,36 +1,42 @@
 <?php
-	//Connexion à la base de données
-	require_once('../database.php');
+    if(isset($_POST['submit']))
+        {
+            require_once("../database.php");
 
-	//Recupération des variables
-		if(isset($_POST['submit']))
-			{
-                $code = $_POST['code'];
+            $code = $_POST['id'];
 
-				$designation = $_POST['designation'];
+            $designation = $_POST['designation'];
 			
-				$prix = $_POST['prix'];
+			$prix = $_POST['prix'];
 				
-				$quantite = $_POST['quantite'];
+			$quantite = $_POST['quantite'];
 
-				$modele = $_POST['modele'];
+			$modele = $_POST['modele'];
 				
-                $Photo = $_FILES['photo']['name'];
-                
-               if((!empty($code)) && (!empty($designation)) && (!empty( $prix)) && (!empty( $quantite)) && (!empty($modele)) && (!empty($Photo)))
-                    {
-                        $modifier = $bdd->prepare('UPDATE Pieces SET CodePro =?, DesignationPro = ?, PUPro = ?, QtePro = ?, CodeMod= ?, PhotoPro =?  WHERE CodePro =?');
+            $Photo = $_FILES['photo']['name'];
 
-                        $variables = array($code, $designation, $prix, $quantite, $Photo, $modele);
+            if( (!empty($designation)) && (!empty( $prix)) && (!empty($quantite)) && (!empty($modele)) && (!empty($Photo)) )
+                {
+                    //Modification des données dans la base de donnée
+        
+                    $req = $bdd->prepare("UPDATE Pieces SET DesignationPro = ?, PUPro = ?, QtePro = ?, PhotoPro = ?, CodeMod= ? WHERE CodePro=?");
 
-                        $modifier->execute($variables);
+                    $variables = array($designation, $prix, $quantite, $Photo, $modele, $code);
+    
+                    $req->execute($variables);
 
-                        //header('location: AfficherProduit.php');
-                    }
-                else{
-                        echo 'S\'il vous plait veuillez remplir les champs vides';
-                        //header('location: EditerProduit.php');
-                    }
-                    
-            }
+                   if($req)
+                        {
+                            header("location:AfficherProduit.php");
+                        }
+                    else
+                        {
+                            echo "Echec";
+                        } 
+                }
+            else
+                {
+                    echo '<p class= "spacer">S.V.P veuillez renseigner tous les champs</p>';
+                }
+        }
 ?>

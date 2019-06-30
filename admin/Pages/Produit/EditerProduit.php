@@ -1,6 +1,6 @@
 <?php
 
-    $code = $_GET['Code'];
+    $code = $_GET['id'];
 
     require_once('../entete.php');
     require_once('../database.php');

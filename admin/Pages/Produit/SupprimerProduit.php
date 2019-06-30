@@ -3,9 +3,9 @@
 ?>
 <?php
 
-    $code = $_GET['Code'];
+    $code = $_GET['id'];
 
-    $delete = $bdd->prepare('DELETE FROM Produits WHERE CODE_PRO = ?'); 
+    $delete = $bdd->prepare('DELETE FROM Pieces WHERE CodePro = ?'); 
 
     $variables = array($code);
 
