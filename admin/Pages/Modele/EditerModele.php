@@ -28,8 +28,8 @@
 						</div>
 
 						<div class="form-group">
-							<label for="modele" class="control-label">Choisir la marque:</label>
-							<select name="modele" class="custom-select mb-6">
+							<label class="control-label">Choisir la marque:</label>
+							<select name="marque" class="custom-select mb-6">
 
 								<?php
 									require_once('../database.php');
@@ -38,10 +38,10 @@
 					
 									$req->execute();
 					
-									while($Modele = $req->fetch())
+									while($marque = $req->fetch())
 										{
 								?>
-									<option value="<?= $Modele['CodeMod']; ?>"><?php echo $Modele['DesignationMod']; ?></option>
+									<option value="<?= $marque['CodeMarq']; ?>"><?php echo $marque['DesignationMarq']; ?></option>
 
 										<?php } ?>
 							</select>

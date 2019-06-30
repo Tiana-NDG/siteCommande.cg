@@ -5,15 +5,15 @@
 
             $code = $_POST['id'];
             $designation = $_POST['designation'];
-            $modele = $_POST['modele'];
+            $marque = $_POST['marque'];
 
-            if( (!empty($designation)) && (!empty( $modele)) )
+            if( (!empty($designation)) && (!empty( $marque)) )
                 {
                     //Modification des données dans la base de donnée
         
                     $req = $bdd->prepare("UPDATE Modele_Voiture SET DesignationMod = ?, CodeMarq= ? WHERE CodeMod=?");
 
-                    $variables = array($designation, $modele, $code);
+                    $variables = array($designation, $marque, $code);
     
                     $req->execute($variables);
 
