@@ -9,7 +9,6 @@
 			$reponse->execute();
 ?>
 	<body>
-		<?php require_once("entete.php")?>
 		<div class="col-md-6 col-xs_12 spacer col-md-offest">
 			<div class="panel-info spacer ">
 				<div class="panel-heading">Liste des marques</div>
