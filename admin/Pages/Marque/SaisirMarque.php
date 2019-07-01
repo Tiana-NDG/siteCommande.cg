@@ -1,10 +1,11 @@
 <?php require_once('../entete.php');?>
+
 <body> 
 </body>
     <div class="container col-md-6 spacer center">
        
         <form method="post" action="AjouterMarque.php">
-          
+            <?php // include('errors.php'); ?>
             <div class="form-group">
                 <label class="control-label">Designation:</label>
                 <input type="text" name="designation" class="form-control">
