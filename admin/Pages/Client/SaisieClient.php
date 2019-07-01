@@ -3,15 +3,11 @@
 ?>
 <body>
 	<div class="container spacer col-md-6 col-sx-12 col-md-offest-6">
-
 		<div class="panel panel-info">
-
 			<div class="panel-heading">Les informations consernant le client</div>
-
 			<div class="panel_body">
 
 				<form method="POST" action="AjouterClient.php">
-
 					<div class="form-group" >
 						<label for="nom" class="control-label">Nom du client:</label>
 						<input type="text" name="nom" id="nom" class="form-control">
@@ -34,7 +30,7 @@
 					</div>
 					<div class="form-group">
 						<label for="cat" class="control-label">Type de client:</label>
-						<select name="pays" class="custom-select mb-6">
+						<select name="typecli" class="custom-select mb-6">
 								<option value="Particulier">Particulier</option>
 								<option value="Entreprise">Entreprise</option>
 						</select>
@@ -52,12 +48,10 @@
                                 <option value="Brazza">P/N</option>
 						</select>
                     </div>
-                    
                     <div  class="form-group">
 						<label for="pri" class="control-label">Adresse:</label>
 						<input type="text" name="adresse" id="pri" class="form-control">
-					</div>
-						
+					</div>	
 					<div>
 						<input type="submit" name="submit" class="btn btn-primary" value="Enregistrer">
 					</div>

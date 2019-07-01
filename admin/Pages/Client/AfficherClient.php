@@ -4,7 +4,7 @@
 		
 		//Affichages de tous les agents
 
-			$reponse = $bdd->prepare('SELECT * FROM Agent');
+			$reponse = $bdd->prepare('SELECT * FROM Client');
 			$reponse->execute();
 ?>
 	<body>
@@ -15,11 +15,12 @@
 					<table class="table table-striped">
 						<thead>
                             <tr>
-								<th>Matricule agent</th>
 								<th>Nom</th>
                                 <th>Prenom</th>
-                                <th>Genre</th>
-                                <th>Téléphone</th>
+								<th>Email</th>
+								<th>Téléphone</th>
+								<th>Mot de passe</th>
+								<th>Type de client</th>
                                 <th>Pays</th>
                                 <th>Ville</th>
                                 <th>Adresse</th>
@@ -28,17 +29,18 @@
 						<tbody>
 							<?php while($donnees = $reponse->fetch()) { ?>
 							<tr>
-                                <td><?php echo htmlspecialchars($donnees['CodeAg']) ?></td>
-                                <td><?php echo htmlspecialchars($donnees['NomAg']) ?></td>
-                                <td><?php echo htmlspecialchars($donnees['PrenomAg']) ?></td>
-                                <td><?php echo htmlspecialchars($donnees['GenreAg']) ?></td>
-                                <td><?php echo htmlspecialchars($donnees['TelAg']) ?></td>
+                                <td><?php echo htmlspecialchars($donnees['NomCli']) ?></td>
+                                <td><?php echo htmlspecialchars($donnees['PrenomCli']) ?></td>
+                                <td><?php echo htmlspecialchars($donnees['EmailCli']) ?></td>
+								<td><?php echo htmlspecialchars($donnees['TelCli']) ?></td>
+								<td><?php echo htmlspecialchars($donnees['MotdePasseCli']) ?></td>
+								<td><?php echo htmlspecialchars($donnees['TypeCli']) ?></td>
                                 <td><?php echo htmlspecialchars($donnees['PaysAg']) ?></td>
                                 <td><?php echo htmlspecialchars($donnees['VilleAg']) ?></td>
                                 <td><?php echo htmlspecialchars($donnees['AdresseAg']) ?></td>
 
-								<td><a href="EditerAgent.php?id=<?php echo $donnees['CodeAg']; ?>">Modifier</a></td>
-								<td><a onClick="return confirm('Etes-vous sûre de vouloir Supprimer ?')" href="SupprimerAgent.php?id=<?php echo $donnees['CodeAg']; ?>">Supprimer</a></td>
+								<td><a href="EditerClient.php?id=<?php echo $donnees['CodeCli']; ?>">Modifier</a></td>
+								<td><a onClick="return confirm('Etes-vous sûre de vouloir Supprimer ?')" href="SupprimerClient.php?id=<?php echo $donnees['CodeCli']; ?>">Supprimer</a></td>
 							</tr>
 							<?php }
 								$reponse->closeCursor();
