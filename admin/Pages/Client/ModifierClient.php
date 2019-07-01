@@ -28,6 +28,6 @@
                         echo 'Echec; une erreur c\'est produite d\'une lors de l\'enregistrement <a href="javascript:history.back()">Modifier les informations du client</a>';
                     } 
                 }else{
-                    echo '<p class= "spacer">S.V.P veuillez renseigner tous les champs</p>, <a href="javascript:history.back()">Modifier les informations du client</a>';
+                    echo '<p class= "spacer">S.V.P veuillez renseigner tous les champs ,<br><a href="javascript:history.back()">Modifier les informations du client</a></p>';
                 }
         }    

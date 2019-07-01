@@ -23,18 +23,20 @@
             if($client){ 
                 echo 'Cette adresse existe déjà dans la base de donnée, <br> 
                         Pour des raisons de sécurité, veuillez changer l\'adresse mail 
-                        <a href="javascript:history.back()">Ajouter un nouveau agent</a>';
+                        <a href="javascript:history.back()">Réessaye</a>';
             }else{
                 //Enregistrement des données dans la base de donnée  
                 $req = $bdd->prepare('INSERT INTO Client(NomCli, PrenomCli, EmailCli, TelCli, MotdePasseCli, TypeCli, PaysCli, VilleCli, AdresseCli) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)');
-                $variables = array($nom, $prenom, $email, $tel, $passe, $type, $pays, $ville, $adresse);
+                //on crypte le mot de passe
+                $passe_crypt = password_hash($passe, PASSWORD_BCRYPT);
+                $variables = array($nom, $prenom, $email, $tel, $passe_crypt, $type, $pays, $ville, $adresse);
                 $req->execute($variables);
 
                 if($req){
-                    echo 'Enregistrement éffectué avec succes';
+                    echo 'Enregistrement éffectué avec succes, <a href="javascript:history.back()">Ajouter un nouveau client</a>';
                 }
                 else{
-                    echo "Echec d'enregistrement";
+                    echo 'Echec d\'enregistrement, <a href="javascript:history.back()">Ajouter un nouveau client</a>';
                 }
             }
         }           

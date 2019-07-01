@@ -4,7 +4,7 @@
 	
     $code = $_GET['id'];
 
-    $req = $bdd->prepare('SELECT * FROM Client WHERE CodeCl=?');
+    $req = $bdd->prepare('SELECT * FROM Client WHERE CodeCli=?');
     $variable = array($code);
 	$req->execute($variable);
 	$donnees = $req->fetch();
@@ -15,7 +15,7 @@
 			<div class="panel-heading">Les informations consernant le client</div>
 			<div class="panel_body">
 
-				<form method="POST" action="ModifierClient.php.php">
+				<form method="POST" action="ModifierClient.php">
 					<div class="form-group" >
 						<label for="nom" class="control-label">Nom du client:</label>
 						<input type="text" name="nom" value="<?php echo $donnees['NomCli'] ?>" id="nom" class="form-control">
@@ -58,7 +58,7 @@
                     </div>
                     <div  class="form-group">
 						<label for="pri" class="control-label">Adresse:</label>
-						<input type="text" name="adresse" value="<?php echo $donnees['AdresseAg'] ?>" id="pri" class="form-control">
+						<input type="text" name="adresse" value="<?php echo $donnees['AdresseCli'] ?>" id="pri" class="form-control">
 					</div>	
 					<div>
 						<input type="submit" name="submit" class="btn btn-primary" value="Enregistrer">

@@ -10,7 +10,7 @@
 	<body>
 		<div class="col-md-6 col-xs_12 spacer col-md-offest">
 			<div class="panel-info spacer ">
-				<div class="panel-heading">Liste des agents</div>
+				<div class="panel-heading">Liste des clients</div>
 				<div class="panel-body">
 					<table class="table table-striped">
 						<thead>
@@ -35,9 +35,9 @@
 								<td><?php echo htmlspecialchars($donnees['TelCli']) ?></td>
 								<td><?php echo htmlspecialchars($donnees['MotdePasseCli']) ?></td>
 								<td><?php echo htmlspecialchars($donnees['TypeCli']) ?></td>
-                                <td><?php echo htmlspecialchars($donnees['PaysAg']) ?></td>
-                                <td><?php echo htmlspecialchars($donnees['VilleAg']) ?></td>
-                                <td><?php echo htmlspecialchars($donnees['AdresseAg']) ?></td>
+                                <td><?php echo htmlspecialchars($donnees['PaysCli']) ?></td>
+                                <td><?php echo htmlspecialchars($donnees['VilleCli']) ?></td>
+                                <td><?php echo htmlspecialchars($donnees['AdresseCli']) ?></td>
 
 								<td><a href="EditerClient.php?id=<?php echo $donnees['CodeCli']; ?>">Modifier</a></td>
 								<td><a onClick="return confirm('Etes-vous sûre de vouloir Supprimer ?')" href="SupprimerClient.php?id=<?php echo $donnees['CodeCli']; ?>">Supprimer</a></td>
