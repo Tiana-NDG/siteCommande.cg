@@ -44,7 +44,7 @@
                     <td><?php echo htmlspecialchars($donnees['DesignationMod']); ?></td>
 
 					<td><a href="EditerProduit.php?id=<?php echo htmlspecialchars($donnees['CodePro']) ?>"><strong>Editer</strong></a></td>
-					<td><a href="SupprimerProduit.php?id=<?php echo htmlspecialchars($donnees['CodePro']) ?>"><strong>Suprimer</strong></a></td> 
+					<td><a onClick="return confirm('Etes-vous sûre de vouloir Supprimer ?')" href="SupprimerProduit.php?id=<?php echo htmlspecialchars($donnees['CodePro']) ?>"><strong>Suprimer</strong></a></td> 
 				</tr>
 				<?php
 					}

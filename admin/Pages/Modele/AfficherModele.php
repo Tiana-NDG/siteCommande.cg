@@ -26,7 +26,7 @@
 								<td><?php echo htmlspecialchars($donnees['DesignationMod']) ?></td>		
 								<td><?php echo htmlspecialchars($donnees['DesignationMarq']) ?></td>
 								<td><a href="EditerModele.php?id=<?php echo $donnees['CodeMod']; ?>">Modifier</a></td>
-								<td><a href="SupprimerModele.php?id=<?php echo $donnees['CodeMod']; ?>">Supprimer</a></td>
+								<td><a onClick="return confirm('Etes-vous sûre de vouloir Supprimer ?')" href="SupprimerModele.php?id=<?php echo $donnees['CodeMod']; ?>">Supprimer</a></td>
 							</tr>
 							<?php }
 								$reponse->closeCursor();

@@ -25,7 +25,7 @@
 								<td><?php echo htmlspecialchars($donnees['DesignationMarq']) ?></td>
 
 								<td><a href="EditerMarque.php?id=<?php echo $donnees['CodeMarq']; ?>">Modifier</a></td>
-								<td><a href="SupprimerMarque.php?id=<?php echo $donnees['CodeMarq']; ?>">Supprimer</a></td>
+								<td><a onClick="return confirm('Etes-vous sûre de vouloir Supprimer ?')" href="SupprimerMarque.php?id=<?php echo $donnees['CodeMarq']; ?>">Supprimer</a></td>
 							</tr>
 							<?php }
 								$reponse->closeCursor();
