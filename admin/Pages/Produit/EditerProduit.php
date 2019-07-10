@@ -26,11 +26,6 @@
                         <label for="" class="control-label">Code: <?= $answer['CodePro']?></label>
                         <input type="hidden" name="code" value="<?= $answer['CodePro']?>" id="" class="form-control">
                     </div>
-                    <div class="form-group">
-                        <label for="" class="control-label">Image:</label>
-                        <input type="file" name="photo" id="" class="form-control">
-                        <img src="../../images/<?php echo $answer['PhotoPro']; ?>" alt="" width="100" heigth="100">
-                    </div>
                     <div class="form-group" >
 						<label for="nom" class="control-label">Designation:</label>
 						<input type="text" name="designation" id="nom" value="<?= $answer['DesignationPro']?>" class="form-control">
@@ -60,7 +55,12 @@
 
 									<?php } ?>
 						</select>
-					</div> 	
+					</div>
+                    <div class="form-group">
+                        <label for="" class="control-label">Image:</label>
+                        <input type="file" name="photo" id="" class="form-control">
+                        <img src="../../../styles/images/<?php echo ($answer['PhotoPro']);?>" width="100" heigth="100"/>
+                    </div> 	
                     <div>
                         <button type="submit" name="submit" class="btn btn-success">Modifier</button>
                     </div>

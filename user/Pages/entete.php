@@ -12,14 +12,4 @@
 	<link rel="stylesheet" href="../../../styles/css/style.css">
     </head>
     <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-    <ul class="nav navbar-nav">
-        <li><a href="AfficherProduit.php">Produit</a></li>
-        <li><a href="AfficherCategorie.php">Catégorie</a></li>
-        <li><a href="user.php">Utilisateur</a></li>
-    </ul>
-</div>
-
-
-
-
+    
