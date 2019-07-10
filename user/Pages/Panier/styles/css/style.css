@@ -1,0 +1,115 @@
+@charset "UTF-8";
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+.wrapper {
+  width: 1040;
+  max-width: 90%;
+  margin: 0 auto; }
+  .wrapper .commander {
+    background-color: #162b33;
+    margin-top: 30px;
+    height: 100px;
+    color: #4299bb; }
+    .wrapper .commander ul li {
+      float: left;
+      list-style: none;
+      margin: 25px;
+      padding: 20px; }
+      .wrapper .commander ul li a {
+        float: left;
+        border-radius: 8px 8px 8px 8px;
+        margin-top: -0.5em;
+        width: 150px;
+        height: 40px;
+        margin-left: 550px;
+        color: #4299bb;
+        background-color: #fff;
+        text-decoration: none;
+        padding: 0.5em 1em 0.5em 1em;
+        font-size: 14px; }
+  .wrapper .contenu_de_commande .table th {
+    color: #243c46; }
+  .wrapper .contenu_de_commande .table td {
+    color: #000;
+    font-weight: 600; }
+    .wrapper .contenu_de_commande .table td img {
+      width: 150px;
+      height: 150px; }
+    .wrapper .contenu_de_commande .table td a {
+      color: #f30606;
+      text-decoration: none;
+      font-size: 14px; }
+
+/*Mobiles (Le côté responsif)
+
+@media screen and (max-device-width:900px){
+    .wrapper{
+        max-width: 90%;
+        margin: 0 auto;
+
+        .commander{
+            background-color: #162b33;
+            margin-top: 30px;
+            height: 40px;
+            color: #4299bb;
+    
+            ul{
+                li{
+                    float: left;
+                    list-style: none;
+                    margin-left:2px;
+                    padding:5px;
+    
+                    a{
+                        float:left;
+                        border-radius: 8px 8px 8px 8px;
+                        margin-top: -0.5em;
+                        width:75px;
+                        height:20px;
+                        margin-left:50px;
+                        color: #4299bb;
+                        background-color: #fff;
+                        text-decoration: none;
+                        padding: 0.5em 1em 0.5em 1em;
+                        font-size: 12px;
+                    
+    
+                    }
+                }
+            }
+        }
+
+        .contenu_de_commande{
+
+            .table{
+                width: 90%;
+                
+                th{
+                    color: #243c46;
+                    //color: #000;
+                }
+    
+                td{
+                    color: #000;
+                    img{
+                        width: 50px;
+                        height: 50px;
+                    }
+    
+                    a{
+                        color: #f30606;
+                        text-decoration: none;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}*/
+
+/*# sourceMappingURL=style.css.map */
