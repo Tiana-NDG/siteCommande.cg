@@ -15,9 +15,15 @@
 
         if(password_verify($_POST['passe'], $client['MotdePasseCli'])){
 
-            $_SESSION['auth'] = $client;
+            /*$_SESSION['auth'] = $client;
             $_SESSION['flash']['success'] = 'Vous ête maintenant connecté au site';
-            header('location: ../Recherche/recherche.php');
+            header('location: ../Recherche/recherche.php');*/
+
+            $_SESSION['code'] = $client['CodeCli'];
+            $_SESSION['email'] = $client['EmailCli'];
+            $_SESSION['MotdePasse'] = $client['MotdePasse'];
+            $_SESSION['flash']['success'] = 'Vous ête maintenant connecté au site';
+            header('location: Profil.php?id='.$_SESSION['code']);
 
             exit();
         }else {
